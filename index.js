@@ -11,15 +11,15 @@ function league_matchDay(league, id, leagueFile) {
                        <div style="font-weight: bold; font-size: 1rem; font-style: italic;" 
                          class="border d-flex justify-content-between border-2 border-white p-1 text-white-50 rounded-2">
                            <div class="flex-column">
-                               <p style="font-size: 1rem; font-weight: 200;" class="m-0">${infos.team1}</p>
-                               <p style="font-size: 1rem; font-weight: 200;" class="m-0">${infos.team2}</p>
+                               <p style="font-weight: 200;" class="m-0 fontSmall">${infos.team1}</p>
+                               <p style="font-weight: 200;" class="m-0 fontSmall">${infos.team2}</p>
                            </div>
                            <div class="d-flex">
                                <div class="flex-column mx-5">
-                                 <p style="font-size: 1rem; font-weight: 200;" class="m-0">${infos.score1}</p>
-                                 <p style="font-size: 1rem; font-weight: 200;" class="m-0">${infos.score2}</p>
+                                 <p style="font-weight: 200;" class="m-0 fontSmall">${infos.score1}</p>
+                                 <p style="font-weight: 200;" class="m-0 fontSmall">${infos.score2}</p>
                                </div>
-                               <p style="font-size: 1rem; font-weight: 200;" class="m-0">${infos.time}<span></span></p>
+                               <p style="font-weight: 200;" class="m-0 fontSmall">${infos.time}<span></span></p>
                            </div>
                        </div>
                    </a>
@@ -246,15 +246,15 @@ function lastMatches(match, id) {
         <div class="m-0 my-1">
             <div class="d-flex justify-content-between my-2 text-white pe-3">
                 <div class="d-flex">
-                <p style="font-size: 1rem;" class="m-0 me-3">${lastMatch.time}</p>
+                <p class="m-0 me-3 fontMicro">${lastMatch.time}</p>
                     <div class="flex-column ps-3 border border-1 border-bottom-0 border-top-0 border-start-1 border-end-0">
-                        <p style="font-size: 1rem;" class="m-0">${lastMatch.team1}</p>
-                        <p style="font-size: 1rem;" class="m-0">${lastMatch.team2}</p>
+                        <p class="m-0 fontMicro">${lastMatch.team1}</p>
+                        <p class="m-0 fontMicro">${lastMatch.team2}</p>
                     </div>
                 </div>
                 <div class="flex-column">
-                    <p style="font-size: 1rem;" class="m-0">${lastMatch.score1}</p>
-                    <p style="font-size: 1rem;" class="m-0">${lastMatch.score2}</p>
+                    <p class="m-0 fontMicro">${lastMatch.score1}</p>
+                    <p class="m-0 fontMicro">${lastMatch.score2}</p>
                 </div>
             </div>
         </div>
