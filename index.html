@@ -1,41 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <title>Livesegball</title>
 
   <style>
-
     * {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
     }
 
-    #botInfo {
-      position: fixed;
-      bottom: 0;
-      width: 100%; 
-      font-weight: bold;
-    }
-
     .leDiv {
-        position: fixed;
-        height: 100vh;
-        width: 100%;
-        top: 0;
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      top: 0;
     }
 
 
     @media all and (max-width: 767px) {
-      #botInfo {
-        font-size: 1rem;
-      }
 
       .fontBig {
         font-size: 1.25rem;
@@ -55,18 +48,15 @@
     }
 
     @media all and (min-width: 768px) and (max-width: 1023px) {
-      #botInfo {
-        font-size: 1.5rem;
-      }
 
       .fontBig {
         font-size: 2rem;
       }
-      
+
       .fontMed {
         font-size: 1.5rem;
       }
-      
+
       .fontSmall {
         font-size: 1rem;
       }
@@ -78,19 +68,6 @@
 
     @media all and (min-width: 1024px) {
 
-      #body {
-        width: 50%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-      }
-
-      #botInfo {
-        font-size: 1rem;
-        width: 50%;
-      }
-
       .leDiv {
         width: 50%;
       }
@@ -98,11 +75,11 @@
       .fontBig {
         font-size: 1.5rem;
       }
-      
+
       .fontMed {
         font-size: 1.25rem;
       }
-      
+
       .fontSmall {
         font-size: 1rem;
       }
@@ -113,141 +90,276 @@
     }
   </style>
 </head>
-<body class="bg-black text-white">
-  <div id="body">
 
-    <nav class="navbar navbar-expand m-0 pt-2 border border-2 border-white border-bottom-1 border-start-0 border-top-0 
-      border-end-0 p-0">
-      <div class="container-fluid flex-column">
+<body class="container-fluid bg-black text-white">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 p-0">
 
-        <ul class="navbar-nav container-fluid d-flex justify-content-between align-items-baseline">
-          <li style="font-weight: bolder;" class="nav-item"><i style="cursor: pointer;" class="bi bi-0-circle fontMed"></i></li>
-          <li style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-           font-weight: 400;" class="nav-item app-text fontBig">
-            Livesegball
+      <nav class="navbar navbar-expand flex-column py-2 px-3 border border-2 border-bottom-1 border-start-0 border-top-0 border-end-0 border-white">
+        <ul class="navbar-nav w-100 d-flex justify-content-between align-items-center">
+          <li class="nav-item">
+            <i class="bi bi-0-circle cursor-pointer fw-bold fontMed"></i>
           </li>
-          <li style="font-weight: bolder;" class="nav-item">
-            <i data-bs-toggle="modal" style="cursor: pointer;" data-bs-target="#searchdiv" class="bi bi-search fontMed"></i>
+          <li class="nav-item">
+            <p class="fontBig m-0">Livesegball</p>
+          </li>
+          <li class="nav-item">
+            <i data-bs-toggle="modal" data-bs-target="#searchdiv"
+              class="bi bi-search cursor-pointer fw-bold fontMed"></i>
           </li>
         </ul>
-        <i class="bi bi-calendar2-week-fill fontMed" style="font-weight: bolder; cursor: pointer;"></i>
-        <p class="h6 text-center border border-white border-2 p-1 fontMed">Liveseg football stream app.</p>
+        <i class="bi bi-calendar2-week-fill cursor-pointer fw-bold my-2 fontMed"></i>
+        <p class="h6 border border-white border-2 p-1 fontMed">Liveseg football stream app.</p>
+      </nav>
 
-      </div>
-    </nav>
-    
-    <div class="modal fade" id="searchdiv">
-      <div class="modal-dialog">
-        <div class="modal-content bg-black text-white">
-
-          <div class="modal-header d-flex align-items-center p-0">
-            <i data-bs-dismiss="modal" style="font-weight: bolder; cursor: pointer;" class="bi bi-arrow-left fontMed"></i>
-            <form action="">
-              <div class="d-flex">
-                <input type="text" name="" id="" class="form-control mx-2 mb-2 fontSmall">
-                <button type="submit" class="btn btn-info mb-2 fontSmall">search</button>
+      <div class="modal fade" id="searchdiv">
+        <div class="modal-dialog m-0 mx-auto">
+          <div class="modal-content bg-black text-white">
+            <div class="modal-header p-3 d-flex align-items-center border border-2 border-bottom-1 border-start-0 border-top-0 border-end-0 border-white">
+              <i data-bs-dismiss="modal" class="bi bi-arrow-left cursor-pointer fw-bold fontMed"></i>
+              <form class="d-flex gap-2">
+                <input type="text" placeholder="Enter league" class="form-control fontSmall">
+                <button type="submit" class="btn btn-info fontSmall">search</button>
+              </form>
+            </div>
+            <div class="modal-body d-grid gap-3 p-3">
+              <div data-bs-dismiss="modal" id="premierTitle" class="d-flex align-items-center gap-2 cursor-pointer">
+                <img src="./league_logos/england.jpg" class="rounded-2" style="width: 2rem;" alt="england">
+                <p class="fontSmall m-0">Premier League</p>
               </div>
-            </form>
-          </div>
+              <div data-bs-dismiss="modal" id="laligaTitle" class="d-flex align-items-center gap-2 cursor-pointer">
+                <img src="./league_logos/spain.jpg" class="rounded-2" style="width: 2rem;" alt="spain">
+                <p class="fontSmall m-0">Laliga</p>
+              </div>
+              <div data-bs-dismiss="modal" id="serieTitle" class="d-flex align-items-center gap-2 cursor-pointer">
+                <img src="./league_logos/italy.jpg" class="rounded-2" style="width: 2rem;" alt="italy">
+                <p class="fontSmall m-0">Serie A</p>
+              </div>
+              <div data-bs-dismiss="modal" id="bundTitle" class="d-flex align-items-center gap-2 cursor-pointer">
+                <img src="./league_logos/germany.jpg" class="rounded-2" style="width: 2rem;" alt="germany">
+                <p class="fontSmall m-0">Bundesliga</p>
+              </div>
+              <div data-bs-dismiss="modal" id="ligueTitle" class="d-flex align-items-center gap-2 cursor-pointer">
+                <img src="./league_logos/france.jpg" class="rounded-2" style="width: 2rem;" alt="france">
+                <p class="fontSmall m-0">Ligue 1</p>
+              </div>
 
-          <div class="modal-body py-2 p-0">
-
-            <div data-bs-dismiss="modal" style="cursor: pointer;" id="premierTitle" class="d-flex align-items-baseline">
-              <span><img loading="lazy" class="rounded-2 me-1" src="https://static.livescore.com/i2/fh/england.jpg" alt="" style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;"/></span>
-              <p class="fontSmall">Premier League</p>
             </div>
-            <div data-bs-dismiss="modal" style="cursor: pointer;" id="laligaTitle" class="d-flex align-items-baseline">
-              <span><img loading="lazy" class="rounded-2 me-1" src="https://static.livescore.com/i2/fh/spain.jpg" alt="" style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;"/></span>
-              <p class="fontSmall">Laliga</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <section id="premierDiv" class="container-fluid my-2">
+        <header class="bg-white px-2 rounded-2 text-black">
+          <p style="font-weight: bold;" class="my-3 d-flex align-items-center gap-1">
+            <img loading="lazy" class="rounded-2" src="https://static.livescore.com/i2/fh/england.jpg" alt=""
+              style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;" />
+            <span style="font-weight: bold;" class="fontMed">Premier League</span>
+          </p>
+        </header>
+
+      </section>
+
+      <div id="premTitleDiv" style="display: none;" class="leDiv bg-black text-white">
+        <div class="nextDiv">
+          <div class="container-fluid w-75 d-flex text-white my-2">
+            <i id="cloPremier" style="font-weight: bolder; cursor: pointer;" class="bi bi-arrow-left mx-3 fontMed"></i>
+            <ul class="container-fluid d-flex justify-content-between border border-2 px-2 py-2 border-white nav nav-tabs 
+              nav-justify">
+              <li class="nav-item">
+                <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 reBody fontSmall"
+                  href="#table" data-bs-toggle="tab">
+                  Table
+                </a>
+              </li>
+              <li class="nav-item">
+                <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 fontSmall"
+                  href="#matches" data-bs-toggle="tab">
+                  Matches
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-content bg-black text-white">
+            <div class="tab-pane fade p-2" id="table">
+              <table id="premierTable" class="table text-white table-bordered fontMicro">
+                <tr>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">n/m</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">Teams</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">Ptd</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">W</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">L</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">D</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">GF</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">GA</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">+/-</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">pts</th>
+                </tr>
+              </table>
             </div>
-            <div data-bs-dismiss="modal" style="cursor: pointer;" id="serieTitle" class="d-flex align-items-baseline">
-              <span><img loading="lazy" class="rounded-2 me-1" src="https://static.livescore.com/i2/fh/italy.jpg" alt="" style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;"/></span>
-              <p class="fontSmall">Serie A</p>
+            <div class="tabe-pane fade px-2" id="matches">
+              <section id="match_one">
+                <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 34</p>
+              </section>
+              <section id="match_two">
+                <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 35</p>
+              </section>
             </div>
-            <div data-bs-dismiss="modal" style="cursor: pointer;" id="bundTitle" class="d-flex align-items-baseline">
-              <span><img loading="lazy" class="rounded-2 me-1" src="https://static.livescore.com/i2/fh/germany.jpg" alt="" style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;"/></span>
-              <p class="fontSmall">Bundesliga</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <section id="laligaDiv" class="container-fluid my-2">
+        <header class="bg-white px-2 rounded-2 text-black">
+          <p style="font-weight: bold;" class="my-3 d-flex align-items-center gap-1">
+            <img loading="lazy" class="rounded-2" src="https://static.livescore.com/i2/fh/spain.jpg" alt=""
+              style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;" />
+            <span style="font-weight: bold;" class="fontMed">Laliga Santander</span>
+          </p>
+        </header>
+      </section>
+
+      <div id="laligaTitleDiv" style="display: none;" class="leDiv bg-black text-white">
+        <div class="nextDiv">
+          <div class="container-fluid w-75 d-flex text-white my-2">
+            <i id="cloLaliga" style="font-weight: bolder; cursor: pointer;" class="bi bi-arrow-left mx-3 fontMed"></i>
+            <ul class="container-fluid d-flex justify-content-between border border-2 px-2 py-2 border-white nav nav-tabs 
+              nav-justify">
+              <li class="nav-item">
+                <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 reBody fontSmall"
+                  href="#laligaTable" data-bs-toggle="tab">
+                  Table
+                </a>
+              </li>
+              <li class="nav-item">
+                <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 fontSmall"
+                  href="#laligaMatches" data-bs-toggle="tab">
+                  Matches
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-content bg-black text-white">
+
+            <div class="tab-pane fade p-2" id="laligaTable">
+              <table id="laliga_table" class="table text-white table-bordered fontMicro">
+                <tr>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">n/m</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">Teams</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">Ptd</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">W</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">L</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">D</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">GF</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">GA</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">+/-</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">pts</th>
+                </tr>
+              </table>
             </div>
-            <div data-bs-dismiss="modal" style="cursor: pointer;" id="ligueTitle" class="d-flex align-items-baseline">
-              <span><img loading="lazy" class="rounded-2 me-1" src="https://static.livescore.com/i2/fh/france.jpg" alt="" style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;"/></span>
-              <p class="fontSmall">Ligue 1</p>
+
+            <div class="tabe-pane fade px-2" id="laligaMatches">
+              <section id="laliga_one">
+                <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 36</p>
+              </section>
+              <section id="laliga_two">
+                <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 37</p>
+              </section>
             </div>
 
           </div>
-
         </div>
       </div>
-    </div>
-
-    <!-- <div> -->
 
 
 
 
-    
 
 
 
-    <section id="premierDiv" class="container-fluid my-2">
-      <header class="bg-white px-2 rounded-2 text-black">
-        <p style="font-weight: bold;" class="my-3 d-flex align-items-center gap-1">
-          <img loading="lazy" class="rounded-2" src="https://static.livescore.com/i2/fh/england.jpg" alt="" style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;"/>  
-          <span style="font-weight: bold;" class="fontMed">Premier League</span>
-        </p>
-      </header>
 
-    </section>
 
-    <div  id="premTitleDiv" style="display: none;" class="leDiv bg-black text-white">
-      <div class="nextDiv">
-        <div class="container-fluid w-75 d-flex text-white my-2">
-          <i id="cloPremier" style="font-weight: bolder; cursor: pointer;" class="bi bi-arrow-left mx-3 fontMed"></i>
-          <ul class="container-fluid d-flex justify-content-between border border-2 px-2 py-2 border-white nav nav-tabs 
-            nav-justify">
+
+      <section id="serieDiv" class="container-fluid my-2">
+        <header class="bg-white px-2 rounded-2 text-black">
+          <p style="font-weight: bold;" class="my-3 d-flex align-items-center gap-1">
+            <img loading="lazy" class="rounded-2" src="https://static.livescore.com/i2/fh/italy.jpg" alt=""
+              style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;" />
+            <span style="font-weight: bold;" class="fontMed">Serie A</span>
+          </p>
+        </header>
+
+      </section>
+
+      <div id="serieTitleDiv" style="display: none;" class="leDiv bg-black text-white">
+        <div class="nextDiv">
+          <div class="container-fluid w-75 d-flex text-white my-2">
+            <i id="cloSerie" style="font-weight: bolder; cursor: pointer;" class="bi bi-arrow-left mx-3 fontMed"></i>
+            <ul class="container-fluid d-flex justify-content-between border border-2 px-2 py-2 border-white nav nav-tabs 
+              nav-justify">
               <li class="nav-item">
-                  <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 reBody fontSmall" 
-                    href="#table" data-bs-toggle="tab">
+                <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 reBody fontSmall"
+                  href="#serieTable" data-bs-toggle="tab">
                   Table
-                  </a>
+                </a>
               </li>
               <li class="nav-item">
-                  <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 fontSmall" 
-                    href="#matches" data-bs-toggle="tab">
+                <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 fontSmall"
+                  href="#serieMatches" data-bs-toggle="tab">
                   Matches
-                  </a>
+                </a>
               </li>
-          </ul>
-        </div> 
-  
-        <div class="tab-content bg-black text-white">
-          <div class="tab-pane fade p-2" id="table">
-            <table id="premierTable" class="table text-white table-bordered fontMicro">
-              <tr>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">n/m</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">Teams</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">Ptd</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">W</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">L</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">D</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">GF</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">GA</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">+/-</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">pts</th>
-              </tr>
-            </table>
+            </ul>
           </div>
-          <div class="tabe-pane fade px-2" id="matches">
-            <section id="match_one">
-              <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 34</p>
-            </section>
-            <section id="match_two">
-              <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 35</p>
-            </section>
+
+          <div class="tab-content bg-black text-white">
+
+            <div class="tab-pane fade p-2" id="serieTable">
+              <table id="serie_table" class="table text-white table-bordered fontMicro">
+                <tr>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">n/m</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">Teams</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">Ptd</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">W</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">L</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">D</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">GF</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">GA</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">+/-</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">pts</th>
+                </tr>
+              </table>
+            </div>
+
+            <div class="tabe-pane fade px-2" id="serieMatches">
+              <section id="serie_one">
+                <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 36</p>
+              </section>
+              <section id="serie_two">
+                <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 37</p>
+              </section>
+            </div>
+
           </div>
         </div>
       </div>
-    </div>
-   
 
 
 
@@ -257,67 +369,70 @@
 
 
 
-    <section id="laligaDiv" class="container-fluid my-2">
-      <header class="bg-white px-2 rounded-2 text-black">
-        <p style="font-weight: bold;" class="my-3 d-flex align-items-center gap-1">
-          <img loading="lazy" class="rounded-2" src="https://static.livescore.com/i2/fh/spain.jpg" alt="" style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;"/>
-          <span style="font-weight: bold;" class="fontMed">Laliga Santander</span>
-        </p>
-      </header>
-    </section>
-      
-    <div id="laligaTitleDiv" style="display: none;" class="leDiv bg-black text-white">
-      <div class="nextDiv">
-        <div class="container-fluid w-75 d-flex text-white my-2">
-          <i id="cloLaliga" style="font-weight: bolder; cursor: pointer;" class="bi bi-arrow-left mx-3 fontMed"></i>
-          <ul class="container-fluid d-flex justify-content-between border border-2 px-2 py-2 border-white nav nav-tabs 
-            nav-justify">
+
+      <section id="bundDiv" class="container-fluid my-2">
+        <header class="bg-white px-2 rounded-2 text-black">
+          <p style="font-weight: bold;" class="my-3 d-flex align-items-center gap-1">
+            <img loading="lazy" class="rounded-2" src="https://static.livescore.com/i2/fh/germany.jpg" alt=""
+              style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;" />
+            <span style="font-weight: bold;" class="fontMed">Bundesliga</span>
+          </p>
+        </header>
+
+      </section>
+
+      <div id="bundTitleDiv" style="display: none;" class="leDiv bg-black text-white">
+        <div class="nextDiv">
+          <div class="container-fluid w-75 d-flex text-white my-2">
+            <i id="cloBund" style="font-weight: bolder; cursor: pointer;" class="bi bi-arrow-left mx-3 fontMed"></i>
+            <ul class="container-fluid d-flex justify-content-between border border-2 px-2 py-2 border-white nav nav-tabs 
+              nav-justify">
               <li class="nav-item">
-                  <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 reBody fontSmall" 
-                    href="#laligaTable" data-bs-toggle="tab">
+                <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 reBody fontSmall"
+                  href="#bundTable" data-bs-toggle="tab">
                   Table
-                  </a>
+                </a>
               </li>
               <li class="nav-item">
-                  <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 fontSmall" 
-                    href="#laligaMatches" data-bs-toggle="tab">
+                <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 fontSmall"
+                  href="#bundMatches" data-bs-toggle="tab">
                   Matches
-                  </a>
+                </a>
               </li>
-          </ul>
-        </div> 
-  
-        <div class="tab-content bg-black text-white">
-  
-          <div class="tab-pane fade p-2" id="laligaTable">
-            <table id="laliga_table" class="table text-white table-bordered fontMicro">
-              <tr>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">n/m</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">Teams</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">Ptd</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">W</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">L</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">D</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">GF</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">GA</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">+/-</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">pts</th>
-              </tr>
-            </table>
+            </ul>
           </div>
-  
-          <div class="tabe-pane fade px-2" id="laligaMatches">
-            <section id="laliga_one">
-              <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 36</p>
-            </section>
-            <section id="laliga_two">
-              <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 37</p>
-            </section>
+
+          <div class="tab-content bg-black text-white">
+
+            <div class="tab-pane fade p-2" id="bundTable">
+              <table id="bund_table" class="table text-white table-bordered fontMicro">
+                <tr>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">n/m</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">Teams</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">Ptd</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">W</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">L</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">D</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">GF</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">GA</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">+/-</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">pts</th>
+                </tr>
+              </table>
+            </div>
+
+            <div class="tabe-pane fade px-2" id="bundMatches">
+              <section id="bund_one">
+                <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 36</p>
+              </section>
+              <section id="bund_two">
+                <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 37</p>
+              </section>
+            </div>
+
           </div>
-  
         </div>
       </div>
-    </div>
 
 
 
@@ -327,221 +442,81 @@
 
 
 
- 
-    <section id="serieDiv" class="container-fluid my-2">
-      <header class="bg-white px-2 rounded-2 text-black">
-        <p style="font-weight: bold;" class="my-3 d-flex align-items-center gap-1">
-          <img loading="lazy" class="rounded-2" src="https://static.livescore.com/i2/fh/italy.jpg" alt="" style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;"/>
-          <span style="font-weight: bold;" class="fontMed">Serie A</span>
-        </p>
-      </header>
 
-    </section>
+      <section id="ligueDiv" class="container-fluid my-2 mb-5">
+        <header class="bg-white px-2 rounded-2 text-black">
+          <p style="font-weight: bold;" class="my-3 d-flex align-items-center gap-1">
+            <img loading="lazy" class="rounded-2" src="https://static.livescore.com/i2/fh/france.jpg" alt=""
+              style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;" />
+            <span style="font-weight: bold;" class="fontMed">Ligue 1</span>
+          </p>
+        </header>
 
-    <div id="serieTitleDiv" style="display: none;" class="leDiv bg-black text-white">
-      <div class="nextDiv">
-        <div class="container-fluid w-75 d-flex text-white my-2">
-          <i id="cloSerie" style="font-weight: bolder; cursor: pointer;" class="bi bi-arrow-left mx-3 fontMed"></i>
-          <ul class="container-fluid d-flex justify-content-between border border-2 px-2 py-2 border-white nav nav-tabs 
-            nav-justify">
+      </section>
+
+      <div id="ligueTitleDiv" style="display: none;" class="leDiv bg-black text-white">
+        <div class="nextDiv">
+          <div class="container-fluid w-75 d-flex text-white my-2">
+            <i id="cloLigue" style="font-weight: bolder; cursor: pointer;" class="bi bi-arrow-left mx-3 fontMed"></i>
+            <ul class="container-fluid d-flex justify-content-between border border-2 px-2 py-2 border-white nav nav-tabs 
+              nav-justify">
               <li class="nav-item">
-                  <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 reBody fontSmall" 
-                    href="#serieTable" data-bs-toggle="tab">
+                <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 reBody fontSmall"
+                  href="#ligueTable" data-bs-toggle="tab">
                   Table
-                  </a>
+                </a>
               </li>
               <li class="nav-item">
-                  <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 fontSmall" 
-                    href="#serieMatches" data-bs-toggle="tab">
+                <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 fontSmall"
+                  href="#ligueMatches" data-bs-toggle="tab">
                   Matches
-                  </a>
+                </a>
               </li>
-          </ul>
-        </div> 
-  
-        <div class="tab-content bg-black text-white">
-  
-          <div class="tab-pane fade p-2" id="serieTable">
-            <table id="serie_table" class="table text-white table-bordered fontMicro">
-              <tr>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">n/m</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">Teams</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">Ptd</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">W</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">L</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">D</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">GF</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">GA</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">+/-</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">pts</th>
-              </tr>
-            </table>
+            </ul>
           </div>
-  
-          <div class="tabe-pane fade px-2" id="serieMatches">
-            <section id="serie_one">
-              <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 36</p>
-            </section>
-            <section id="serie_two">
-              <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 37</p>
-            </section>
+
+          <div class="tab-content bg-black text-white">
+
+            <div class="tab-pane fade p-2" id="ligueTable">
+              <table id="ligue_table" class="table text-white table-bordered fontMicro">
+                <tr>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">n/m</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">Teams</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">Ptd</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">W</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">L</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">D</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">GF</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">GA</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">+/-</th>
+                  <th style="background-color: black; color: white;" class="m-0" scope="col">pts</th>
+                </tr>
+              </table>
+            </div>
+
+            <div class="tabe-pane fade px-2" id="ligueMatches">
+              <section id="ligue_one">
+                <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 36</p>
+              </section>
+              <section id="ligue_two">
+                <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 37</p>
+              </section>
+            </div>
+
           </div>
-  
         </div>
       </div>
-    </div>
 
-
-      
-
-
-
-
-
-
-
-    <section id="bundDiv" class="container-fluid my-2">
-      <header class="bg-white px-2 rounded-2 text-black">
-        <p style="font-weight: bold;" class="my-3 d-flex align-items-center gap-1">
-          <img loading="lazy" class="rounded-2" src="https://static.livescore.com/i2/fh/germany.jpg" alt="" style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;"/>
-          <span style="font-weight: bold;" class="fontMed">Bundesliga</span>
-        </p>
-      </header>
-
-    </section>
-
-    <div id="bundTitleDiv" style="display: none;" class="leDiv bg-black text-white">
-      <div class="nextDiv">
-        <div class="container-fluid w-75 d-flex text-white my-2">
-          <i id="cloBund" style="font-weight: bolder; cursor: pointer;" class="bi bi-arrow-left mx-3 fontMed"></i>
-          <ul class="container-fluid d-flex justify-content-between border border-2 px-2 py-2 border-white nav nav-tabs 
-            nav-justify">
-              <li class="nav-item">
-                  <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 reBody fontSmall" 
-                    href="#bundTable" data-bs-toggle="tab">
-                  Table
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 fontSmall" 
-                    href="#bundMatches" data-bs-toggle="tab">
-                  Matches
-                  </a>
-              </li>
-          </ul>
-        </div> 
-
-        <div class="tab-content bg-black text-white">
-
-          <div class="tab-pane fade p-2" id="bundTable">
-            <table id="bund_table" class="table text-white table-bordered fontMicro">
-              <tr>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">n/m</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">Teams</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">Ptd</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">W</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">L</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">D</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">GF</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">GA</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">+/-</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">pts</th>
-              </tr>
-            </table>
-          </div>
-
-          <div class="tabe-pane fade px-2" id="bundMatches">
-            <section id="bund_one">
-              <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 36</p>
-            </section>
-            <section id="bund_two">
-              <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 37</p>
-            </section>
-          </div>
-
-        </div>
+      <div class="col-lg-6 mx-auto fixed-bottom">
+        <button data-bs-toggle="popover" type="button" title="Clarification" data-bs-trigger="focus"
+          data-bs-placement="top" data-bs-content="This is a football app which shows highlight of played match"
+          class="btn btn-block text-bg-dark w-100 rounded-0 fw-bold fontMed">
+          information
+        </button>
       </div>
     </div>
-
- 
-
-
-
-
-
-
-
-
-    <section id="ligueDiv" class="container-fluid my-2 mb-5">
-      <header class="bg-white px-2 rounded-2 text-black">
-        <p style="font-weight: bold;" class="my-3 d-flex align-items-center gap-1">
-          <img loading="lazy" class="rounded-2" src="https://static.livescore.com/i2/fh/france.jpg" alt="" style="background-image:url(data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=); width: 2rem;"/>
-          <span style="font-weight: bold;" class="fontMed">Ligue 1</span>
-        </p>
-      </header>
-
-    </section>
-
-    <div id="ligueTitleDiv" style="display: none;" class="leDiv bg-black text-white">
-      <div class="nextDiv">
-        <div class="container-fluid w-75 d-flex text-white my-2">
-          <i id="cloLigue" style="font-weight: bolder; cursor: pointer;" class="bi bi-arrow-left mx-3 fontMed"></i>
-          <ul class="container-fluid d-flex justify-content-between border border-2 px-2 py-2 border-white nav nav-tabs 
-            nav-justify">
-              <li class="nav-item">
-                  <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 reBody fontSmall" 
-                    href="#ligueTable" data-bs-toggle="tab">
-                  Table
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a style="font-weight: bold;" class="text-white text-decoration-none text-center m-0 fontSmall" 
-                    href="#ligueMatches" data-bs-toggle="tab">
-                  Matches
-                  </a>
-              </li>
-          </ul>
-        </div> 
-  
-        <div class="tab-content bg-black text-white">
-  
-          <div class="tab-pane fade p-2" id="ligueTable">
-            <table id="ligue_table" class="table text-white table-bordered fontMicro">
-              <tr>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">n/m</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">Teams</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">Ptd</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">W</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">L</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">D</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">GF</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">GA</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">+/-</th>
-                <th style="background-color: black; color: white;" class="m-0" scope="col">pts</th>
-              </tr>
-            </table>
-          </div>
-  
-          <div class="tabe-pane fade px-2" id="ligueMatches">
-            <section id="ligue_one">
-              <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 36</p>
-            </section>
-            <section id="ligue_two">
-              <p style="font-weight: bold;" class="m-0 fontSmall">Matchday 37</p>
-            </section>
-          </div>
-  
-        </div>
-      </div>
-    </div>
-
-    <button data-bs-toggle="popover" type="button" title="Clarification" data-bs-trigger="focus" data-bs-placement="top" 
-      id="botInfo" data-bs-content="This is a football app which shows highlight of played match" 
-      class="btn btn-block text-bg-dark rounded-0 fontSmall">
-      information
-    </button>
-
   </div>
   <script src="index.js"></script>
 </body>
+
 </html>
