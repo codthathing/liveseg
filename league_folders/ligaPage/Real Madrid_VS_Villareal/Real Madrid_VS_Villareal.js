@@ -4,8 +4,8 @@ createMatchPage("../../../league_logos/spain.jpg", "Laliga", "./images/hazard_lo
 
 const teamPastMatches = [
   [
-    { dayMonth: "31 may", year: "2023", teamOne: "Chelsea", teamTwo: "Fulham", scoreOne: "0", scoreTwo: "0" },
-    { dayMonth: "31 may", year: "2023", teamOne: "Aston Villa", teamTwo: "Tottenham", scoreOne: "0", scoreTwo: "0" }
+    { fontSize: "font-xs", dayMonth: "31 may", year: "2023", teamOne: "Chelsea", teamTwo: "Fulham", scoreOne: "0", scoreTwo: "0" },
+    { fontSize: "font-xs", dayMonth: "31 may", year: "2023", teamOne: "Aston Villa", teamTwo: "Tottenham", scoreOne: "0", scoreTwo: "0" }
   ]
 ];
 createTeamPastMatches(teamPastMatches);
@@ -66,7 +66,7 @@ const tableH2H = [
 createTableH2H(tableH2H);
 
 const bothHTH = [
-  { dayMonth: "20 may", year: "2023", teamOne: "Chelsea", teamTwo: "Tottenham", scoreOne: "2", scoreTwo: "0" },
-  { dayMonth: "29 June", year: "2024", teamOne: "Tottenham", teamTwo: "Chelsea", scoreOne: "0", scoreTwo: "5" },
+  { fontSize: "font-sm", dayMonth: "20 may", year: "2023", teamOne: "Chelsea", teamTwo: "Tottenham", scoreOne: "2", scoreTwo: "0" },
+  { fontSize: "font-sm", dayMonth: "29 June", year: "2024", teamOne: "Tottenham", teamTwo: "Chelsea", scoreOne: "0", scoreTwo: "5" },
 ]
 createBothH2H(bothHTH);

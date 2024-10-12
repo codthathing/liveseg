@@ -64,20 +64,20 @@ export const createMatchPage = (leagueLogo, leagueName, videoPoster, video, team
 
 
 
-const matchDiv = ({ dayMonth, year, teamOne, teamTwo, scoreOne, scoreTwo }) => {
+const matchDiv = ({ fontSize, dayMonth, year, teamOne, teamTwo, scoreOne, scoreTwo }) => {
   return (
     `
-      <div class="d-flex align-items-center justify-content-between mb-1 text-white my-2">
+      <div class="d-flex align-items-center justify-content-between mb-1 text-white my-2 ${fontSize}">
         <div class="d-flex align-items-center gap-3">
-          <p class="fw-light m-0 pe-3 border border-1 border-bottom-0 border-top-0 border-start-0 border-end-1 font-sm">${dayMonth} <br>${year}</p>
+          <p class="fw-light m-0 pe-3 border border-1 border-bottom-0 border-top-0 border-start-0 border-end-1">${dayMonth} <br>${year}</p>
           <div class="flex-column">
-            <p class="fw-light m-0 font-sm">${teamOne}</p>
-            <p class="fw-light m-0 font-sm">${teamTwo}</p>
+            <p class="fw-light m-0">${teamOne}</p>
+            <p class="fw-light m-0">${teamTwo}</p>
           </div>
         </div>
         <div class="flex-column">
-          <p class="fw-light m-0 font-sm">${scoreOne}</p>
-          <p class="fw-light m-0 font-sm">${scoreTwo}</p>
+          <p class="fw-light m-0">${scoreOne}</p>
+          <p class="fw-light m-0">${scoreTwo}</p>
         </div>
       </div>
     `
@@ -91,11 +91,11 @@ export const createTeamPastMatches = (teamPastMatches) => {
     return (
       `
         <tr class="d-flex gap-5 px-3">
-          ${lastMatch.map(({ dayMonth, year, teamOne, teamTwo, scoreOne, scoreTwo }) => {
+          ${lastMatch.map(({ fontSize, dayMonth, year, teamOne, teamTwo, scoreOne, scoreTwo }) => {
             return (
               `
                 <td class="w-50 bg-black border-0 p-0">
-                  ${matchDiv({ dayMonth, year, teamOne, teamTwo, scoreOne, scoreTwo })}
+                  ${matchDiv({ fontSize, dayMonth, year, teamOne, teamTwo, scoreOne, scoreTwo })}
                 </td>
               `
             );
@@ -162,8 +162,8 @@ export const createTableH2H = (tableH2H) => {
 
 
 export const createBothH2H = (bothHTH) => {
-  const matchH2H = bothHTH.map(({ dayMonth, year, teamOne, teamTwo, scoreOne, scoreTwo }) => {
-    return matchDiv({ dayMonth, year, teamOne, teamTwo, scoreOne, scoreTwo });
+  const matchH2H = bothHTH.map(({ fontSize, dayMonth, year, teamOne, teamTwo, scoreOne, scoreTwo }) => {
+    return matchDiv({ fontSize, dayMonth, year, teamOne, teamTwo, scoreOne, scoreTwo });
   }).join("");
   document.getElementById("bothHTH").innerHTML += matchH2H;
 };
