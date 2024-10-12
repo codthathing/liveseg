@@ -120,7 +120,7 @@ let leagueDivs = createLeagueDetails.map(({ id, tableLink, matchLink, table, tab
                 <div class="w-75 mx-auto d-flex align-items-center gap-5 mb-5">
                     <i class="bi bi-arrow-left fw-bold cursor-pointer font-md cancel-div"></i>
                     <ul class="w-100 d-flex justify-content-around border border-2 border-white py-2 nav nav-tabs" role="tablist">
-                        <li class="nav-item" role="presentation"><a class="nav-link active bg-transparent border-0 fw-bold text-white text-decoration-none font-sm" id=${tableLink} data-bs-toggle="tab" data-bs-target="#${table}" type="button" role="tab" aria-controls="tablePrem" aria-selected="true">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active bg-transparent border-0 fw-bold text-white text-decoration-none font-sm" id=${tableLink} data-bs-toggle="tab" data-bs-target="#${table}" type="button" role="tab" aria-controls="tablePrem" aria-selected="true">Table</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link bg-transparent border-0 fw-bold text-white text-decoration-none font-sm" id=${matchLink} data-bs-toggle="tab" data-bs-target="#${match}" type="button" role="tab" aria-controls="matchPrem" aria-selected="false">Matches</a></li>
                     </ul> 
                 </div>
