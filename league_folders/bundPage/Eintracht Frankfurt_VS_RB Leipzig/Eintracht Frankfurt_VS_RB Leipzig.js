@@ -1,6 +1,6 @@
 import { createMatchPage, createTeamPastMatches, createMatchDetails, createTeamMatchDayInfo, createTableH2H, createBothH2H } from "../../pages.js"
 
-createMatchPage("../../../league_logos/england.jpg", "Premier League", "./images/hazard_logo.jpg", "./videos/hazard_comp.mp4", "../premierLogo/chelsea-logo.png", "Chelsea", "../premierLogo/tottheham-logo.png", "Tottenham Hotspur", "15:00");
+createMatchPage("../../../league_logos/germany.jpg", "Bundesliga", "./images/hazard_logo.jpg", "none", "../bundLogo/frankfurt-logo.png", "Eintracht FrankFurt", "../bundLogo/leipzig-logo.png", "RB Leipzig", "15:00");
 
 const teamPastMatches = [
   [

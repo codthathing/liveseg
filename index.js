@@ -1,6 +1,24 @@
 let popover = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 let nowPop = popover.map((okay) => { return new bootstrap.Popover(okay) })
 
+const modalContent = [
+    {leagueLogo: "./league_logos/england.jpg", leagueName: "Premier League"},
+    {leagueLogo: "./league_logos/spain.jpg", leagueName: "Laliga"},
+    {leagueLogo: "./league_logos/italy.jpg", leagueName: "Serie A"},
+    {leagueLogo: "./league_logos/germany.jpg", leagueName: "Bundesliga"},
+    {leagueLogo: "./league_logos/france.jpg", leagueName: "Ligue 1"}
+];
+document.getElementById("modalContent").innerHTML = modalContent.map(({leagueLogo, leagueName}) => {
+    return (
+        `
+            <div data-bs-dismiss="modal" id="premierTitle" class="d-flex align-items-center gap-2 cursor-pointer show-div">
+                <img src=${leagueLogo} class="rounded-2" style="width: 2rem;" alt=${leagueName}>
+                <p class="font-sm m-0">${leagueName}</p>
+            </div>
+        `
+    );
+}).join("");
+
 const leagueInfo = [
     {
         leagueName: "Premier League",
@@ -59,22 +77,22 @@ let mainLinks = leagueInfo.map(({ leagueName, leagueLogo, leagueFile, leagueInfo
         `<section class="container-fluid px-3 my-3">
             <header class="bg-white mb-2 py-1 px-2 rounded-2 d-flex align-items-center gap-1">
                 <img src=${leagueLogo} class="rounded-2" style="width: 2rem;" alt=${leagueName}">
-                <p class="fw-bold text-black m-0 fontMed">${leagueName}</p>
+                <p class="fw-bold text-black m-0 font-md">${leagueName}</p>
             </header>
             ${leagueInfos.map(({ team1, team2, score1, score2, time }) => {
                 return (
                     `<a class="text-decoration-none" href="./league_folders/${leagueFile}/${team1}_VS_${team2}/${team1}_VS_${team2}.html">
                         <div class="d-flex justify-content-between border border-2 border-white my-1 px-2 py-1 text-white-50 fst-italic rounded-2">
                             <div class="flex-column">
-                                <p class="fw-light m-0 fontSmall">${team1}</p>
-                                <p class="fw-light m-0 fontSmall">${team2}</p>
+                                <p class="fw-light m-0 font-sm">${team1}</p>
+                                <p class="fw-light m-0 font-sm">${team2}</p>
                             </div>
                             <div class="d-flex align-items-center gap-5">
                                 <div class="flex-column">
-                                  <p class="fw-light m-0 fontSmall">${score1}</p>
-                                  <p class="fw-light m-0 fontSmall">${score2}</p>
+                                  <p class="fw-light m-0 font-sm">${score1}</p>
+                                  <p class="fw-light m-0 font-sm">${score2}</p>
                                 </div>
-                                <p class="fw-light m-0 fontSmall">${time}</p>
+                                <p class="fw-light m-0 font-sm">${time}</p>
                             </div>
                         </div>
                     </a>`
@@ -100,15 +118,15 @@ let leagueDivs = createLeagueDetails.map(({ id, tableLink, matchLink, table, tab
         `<div id=${id} class="position-fixed fixed-top w-100 h-100 bg-black p-3 overflow-auto display-overflow display-div">
             <div class="col-lg-6 mx-auto">
                 <div class="w-75 mx-auto d-flex align-items-center gap-5 mb-5">
-                    <i class="bi bi-arrow-left fw-bold cursor-pointer fontMed cancel-div"></i>
+                    <i class="bi bi-arrow-left fw-bold cursor-pointer font-md cancel-div"></i>
                     <ul class="w-100 d-flex justify-content-around border border-2 border-white py-2 nav nav-tabs" role="tablist">
-                        <li class="nav-item" role="presentation"><a class="nav-link active bg-transparent border-0 fw-bold text-white text-decoration-none fontSmall" id=${tableLink} data-bs-toggle="tab" data-bs-target="#${table}" type="button" role="tab" aria-controls="tablePrem" aria-selected="true">Home</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link bg-transparent border-0 fw-bold text-white text-decoration-none fontSmall" id=${matchLink} data-bs-toggle="tab" data-bs-target="#${match}" type="button" role="tab" aria-controls="matchPrem" aria-selected="false">Profile</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active bg-transparent border-0 fw-bold text-white text-decoration-none font-sm" id=${tableLink} data-bs-toggle="tab" data-bs-target="#${table}" type="button" role="tab" aria-controls="tablePrem" aria-selected="true">Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link bg-transparent border-0 fw-bold text-white text-decoration-none font-sm" id=${matchLink} data-bs-toggle="tab" data-bs-target="#${match}" type="button" role="tab" aria-controls="matchPrem" aria-selected="false">Profile</a></li>
                     </ul> 
                 </div>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id=${table} role="tabpanel" aria-labelledby=${tableLink}>
-                        <table id=${tableDetails} class="table table-bordered m-0 fontMicro"></table>
+                        <table id=${tableDetails} class="table table-bordered m-0 font-xs"></table>
                     </div>
                     <div class="tab-pane fade" id=${match} role="tabpanel" aria-labelledby=${matchLink}></div>
                 </div>
@@ -279,20 +297,20 @@ function leagueMatchDayUpdate(leagueMatchDay, id) {
     leagueMatchDay.map(({matchDay, matchPlayed}) => {
         matchDiv +=
             `<section class="mb-3">
-            <p class="fw-bold mb-1 fontSmall">${matchDay}</p>
+            <p class="fw-bold mb-1 font-sm">${matchDay}</p>
             ${matchPlayed.map(({time, team1, team2, score1, score2}) => {
                 return (
                     `<div class="d-flex justify-content-between my-1">
                         <div class="d-flex gap-3">
-                            <p class="pe-3 border border-bottom-0 border-top-0 border-start-0 border-end-1 fontMicro">${time}</p>
+                            <p class="pe-3 border border-bottom-0 border-top-0 border-start-0 border-end-1 font-xs">${time}</p>
                             <div class="flex-column">
-                                <p class="m-0 fontMicro">${team1}</p>
-                                <p class="m-0 fontMicro">${team2}</p>
+                                <p class="m-0 font-xs">${team1}</p>
+                                <p class="m-0 font-xs">${team2}</p>
                             </div>
                         </div>
                         <div class="flex-column">
-                            <p class="m-0 fontMicro">${score1}</p>
-                            <p class="m-0 fontMicro">${score2}</p>
+                            <p class="m-0 font-xs">${score1}</p>
+                            <p class="m-0 font-xs">${score2}</p>
                         </div>
                     </div>`
                 );
