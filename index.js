@@ -63,21 +63,21 @@ let mainLinks = leagueInfo.map(({ leagueName, leagueLogo, leagueFile, leagueInfo
             </header>
             ${leagueInfos.map(({ team1, team2, score1, score2, time }) => {
                 return (
-                    `<a class="text-decoration-none" href="${leagueFile}/${team1}_VS_${team2}.html">
-                            <div class="d-flex justify-content-between border border-2 border-white my-1 px-2 py-1 text-white-50 fst-italic rounded-2">
-                                <div class="flex-column">
-                                    <p class="fw-light m-0 fontSmall">${team1}</p>
-                                    <p class="fw-light m-0 fontSmall">${team2}</p>
-                                </div>
-                                <div class="d-flex align-items-center gap-5">
-                                    <div class="flex-column">
-                                      <p class="fw-light m-0 fontSmall">${score1}</p>
-                                      <p class="fw-light m-0 fontSmall">${score2}</p>
-                                    </div>
-                                    <p class="fw-light m-0 fontSmall">${time}</p>
-                                </div>
+                    `<a class="text-decoration-none" href="./league_folders/${leagueFile}/${team1}_VS_${team2}/${team1}_VS_${team2}.html">
+                        <div class="d-flex justify-content-between border border-2 border-white my-1 px-2 py-1 text-white-50 fst-italic rounded-2">
+                            <div class="flex-column">
+                                <p class="fw-light m-0 fontSmall">${team1}</p>
+                                <p class="fw-light m-0 fontSmall">${team2}</p>
                             </div>
-                        </a>`
+                            <div class="d-flex align-items-center gap-5">
+                                <div class="flex-column">
+                                  <p class="fw-light m-0 fontSmall">${score1}</p>
+                                  <p class="fw-light m-0 fontSmall">${score2}</p>
+                                </div>
+                                <p class="fw-light m-0 fontSmall">${time}</p>
+                            </div>
+                        </div>
+                    </a>`
                 )
             }).join('')}
         </section>`
@@ -116,7 +116,7 @@ let leagueDivs = createLeagueDetails.map(({ id, tableLink, matchLink, table, tab
         </div>`
     );
 }).join("");
-document.querySelector("body").innerHTML += leagueDivs;
+document.getElementById("leagueDivMain").innerHTML = leagueDivs;
 
 
 const showDiv = document.getElementsByClassName("show-div");
